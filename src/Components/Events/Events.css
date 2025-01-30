@@ -1,4 +1,4 @@
-#eventsWrapper{
+#eventsWrapper {
     margin-top: 80px;
 }
 
@@ -9,7 +9,7 @@
     color: #002838;
 }
 
-#events{
+#events {
     display: flex;
     justify-content: space-evenly;
     flex-wrap: wrap;
@@ -19,7 +19,12 @@
     padding: 10px 30px;
 }
 
-.event{
+#eventsWrapper h2 {
+    margin-top: 12vh;
+    /* height of navbar (10vh) + 2vh */
+}
+
+.event {
     width: 320px;
     margin: 20px 30px;
     cursor: pointer;
@@ -31,11 +36,11 @@
     overflow: hidden;
 }
 
-.eventDetail{
+.eventDetail {
     padding: 10px;
 }
 
-.event img{
+.event img {
     width: 100%;
     height: 200px;
     object-fit: cover;
@@ -55,4 +60,160 @@
 
 .event .eventDetail{
     padding: 0 15px 25px;;
+}
+
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    background-color: rgba(32, 32, 32, 0.9);
+    z-index: 10000;
+    display: flex;
+    justify-content: center;
+    /* align-items: center; */
+}
+
+.modal img {
+    margin-top: 5vh;
+    display: flex;
+    max-width: 70%;
+    max-height: 70vh;
+    border-radius: 1.2rem;
+    animation: fadeIn 0.2s ease-in;
+    user-select: none;
+}
+
+.modal-out {
+    animation: fadeOpacity 0.2s ease-in;
+    display: none;
+}
+
+.modal-out img {
+    animation: fadeOut 0.2s ease-in;
+    display: none;
+}
+
+.modal-nextimgs {
+    display: flex;
+    position: absolute;
+    bottom: 5%;
+}
+
+.modal-nextimgs img {
+    border-radius: 0;
+    max-height: 64px;
+    margin-right: 16px;
+    opacity: 0.7;
+    transition: 0.2s ease;
+    cursor: pointer;
+    overflow-x: scroll;
+}
+
+.modal-nextimgs img:hover {
+    opacity: 1;
+}
+
+.modal-icons {
+    position: fixed;
+    right: 1%;
+    top: 1%;
+}
+
+.gallery-icons {
+    position: fixed;
+    top: 40%;
+    left: 50%;
+    width: 100%;
+}
+
+.gallery-icons div {
+    display: inline;
+    cursor: pointer;
+    /* background-color: grey; */
+}
+
+.gallery-icons div svg {
+    width: 64px;
+    height: 64px;
+}
+
+.gallery-icons .iconb {
+    position: relative;
+    left: -40%;
+}
+
+.gallery-icons .iconf {
+    position: relative;
+    left: calc(40% - 128px);
+}
+
+.modal-icons svg {
+    cursor: pointer;
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeOut {
+
+    /*
+        Putting display: flex in both durations
+        somehow works.
+    */
+    0% {
+        display: flex;
+        opacity: 1;
+        transform: translateY(0px);
+    }
+
+    100% {
+        display: flex;
+        opacity: 0;
+        transform: translateY(20px);
+    }
+}
+
+@keyframes fadeOpacity {
+    from {
+        display: flex;
+        opacity: 1;
+    }
+
+    to {
+        display: flex;
+        opacity: 0;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .event {
+        width: 280px;
+        margin: 15px;
+    }
+
+    .modal {
+        align-items: center;
+    }
+
+    .modal img {
+        max-width: 90%;
+        max-height: 40vh;
+        margin-top: 0;
+    }
+
+    .modal-nextimgs {
+        display: none;
+    }
 }

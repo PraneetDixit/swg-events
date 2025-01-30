@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import './Navbar.css';
 import { motion } from "framer-motion";
 import LogoSVG from "../../Assets/Images/Logo.svg";
+import LogoSVG from "./logosvg.svg";
 // import Logo from 'components/Logo';
 
 const Navbar = () => {
@@ -15,7 +16,11 @@ const Navbar = () => {
     <nav>
       <a href='/'>
         <img src={LogoSVG} alt='' />
+      <a href='/'>
+        <img src={LogoSVG} alt='' />
       </a>
+      {/* <a href='/'>
+      </a> */}
       {/* <a href='/'>
       </a> */}
       <div>
@@ -53,6 +58,7 @@ const Navbar = () => {
             whileTap={{ scale: 0.9, y: 0 }}>
             <div className="dropdown">
               <button className="dropbtn links">Blogs</button>
+              <div className="dropdown-content">
               <div className="dropdown-content">
                 <a href="/internblogs">Internship Blogs</a>
                 <a href="/placementblogs">Placement Blogs</a>
