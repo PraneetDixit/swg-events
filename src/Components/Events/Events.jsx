@@ -9,7 +9,7 @@ export default function Events() {
             scale: 1.02,
             y: -5,
             boxShadow: "0 2px 5px 0 #028d93",
-			transition:{ duration: 0.3 }
+            transition: { duration: 0.3 },
         },
     };
 
@@ -38,8 +38,12 @@ export default function Events() {
                             variants={hoverVariants}
                             whileHover="hover"
                             initial={{ opacity: 0, translateY: "30px" }}
-                            whileInView={{ opacity: 1, translateY: "0px", transition:{ duration: 0.8 } }}
-							viewport={{ once: true }}
+                            whileInView={{
+                                opacity: 1,
+                                translateY: "0px",
+                                transition: { duration: 0.8 },
+                            }}
+                            viewport={{ once: true }}
                             onClick={() => {
                                 setSM({
                                     status: true,
