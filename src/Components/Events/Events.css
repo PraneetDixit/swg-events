@@ -2,7 +2,7 @@
     margin-top: 80px;
 }
 
-#eventsWrapper h2{
+#eventsWrapper h2 {
     text-align: center;
     font-size: 36px;
     padding: 20px;
@@ -15,7 +15,7 @@
     flex-wrap: wrap;
 }
 
-.events{
+.events {
     padding: 10px 30px;
 }
 
@@ -46,20 +46,21 @@
     object-fit: cover;
 }
 
-.event h3{
+.event h3 {
     text-align: center;
     margin: 10px 0;
     font-size: 20px;
     color: #00293a;
 }
 
-.event p{
+.event p {
     text-align: center;
     color: #00293a;
 }
 
-.event .eventDetail{
-    padding: 0 15px 25px;;
+.event .eventDetail {
+    padding: 0 15px 25px;
+    ;
 }
 
 .modal {
@@ -215,5 +216,9 @@
 
     .modal-nextimgs {
         display: none;
+    }
+
+    .gallery-icons {
+        top: 80%;
     }
 }
