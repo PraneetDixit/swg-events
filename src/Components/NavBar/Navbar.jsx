@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import './Navbar.css';
 import { motion } from "framer-motion";
 import LogoSVG from "../../Assets/Images/Logo.svg";
-import LogoSVG from "./logosvg.svg";
 // import Logo from 'components/Logo';
 
 const Navbar = () => {
@@ -17,9 +16,9 @@ const Navbar = () => {
       <a href='/'>
         <img src={LogoSVG} alt='' />
       </a>
-      <a href='/'>
+      {/* <a href='/'>
         <img src={LogoSVG} alt='' />
-      </a>
+      </a> */}
       {/* <a href='/'>
       </a> */}
       {/* <a href='/'>
