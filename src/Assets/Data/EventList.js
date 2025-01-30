@@ -4,12 +4,12 @@ import SA101 from "../Images/Study Abraod 101 Photos/SA101.jpg";
 import OffCampus from "../Images/Off Campus Talks Photos/OffCampus.jpg";
 import PDS from "../Images/PDS Doubt Session Photos/PDS.jpg";
 import CampusTour from "../Images/Campus Tour Photos/CampusTour.png";
-import SF from "../Images/SF Stall Photos/SF.jpg";
+import SF from "../Images/SF Stall photos/SF.jpg";
 import ELAT from "../Images/ELAT Photos/ELAT.png";
 import Foresight from "../Images/Foresight Photos/Foresight.png";
 import Examania from "../Images/Examania Photos/Examania.jpg";
 import AOW from "../Images/AOW/AOW.png";
-import SWGApp from "../Images/SWG App/SWGApp.png";
+import SWGApp from "../Images/SWG app/SWGApp.png";
 import SMP from "../Images/SMP/SMP.jpeg";
 import UPSC from "../Images/UPSC/UPSC.png";
 
