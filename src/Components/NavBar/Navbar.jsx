@@ -16,6 +16,7 @@ const Navbar = () => {
     <nav>
       <a href='/'>
         <img src={LogoSVG} alt='' />
+      </a>
       <a href='/'>
         <img src={LogoSVG} alt='' />
       </a>
@@ -59,11 +60,12 @@ const Navbar = () => {
             <div className="dropdown">
               <button className="dropbtn links">Blogs</button>
               <div className="dropdown-content">
-              <div className="dropdown-content">
-                <a href="/internblogs">Internship Blogs</a>
-                <a href="/placementblogs">Placement Blogs</a>
-                <a href="/adieublogs">Adieu KGP</a>
-                <a href="/kyd">Know Your Department</a>
+                <div className="dropdown-content">
+                  <a href="/internblogs">Internship Blogs</a>
+                  <a href="/placementblogs">Placement Blogs</a>
+                  <a href="/adieublogs">Adieu KGP</a>
+                  <a href="/kyd">Know Your Department</a>
+                </div>
               </div>
             </div>
           </motion.li>
