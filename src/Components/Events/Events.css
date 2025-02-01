@@ -1,222 +1,275 @@
 #eventsWrapper {
-    margin-top: 80px;
+  margin-top: 5rem;
+  margin-bottom: 3rem;
+  margin-right: 4rem;
+  margin-left: 4rem;
 }
 
 #eventsWrapper h2 {
-    text-align: center;
-    font-size: 36px;
-    padding: 20px;
-    color: #002838;
+  text-align: center;
+  font-size: 2rem;
+  padding: 1.25rem;
+  color: #002838;
 }
+
+/* #events {
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+}
+ */
+.events {
+  padding: 10px 30px;
+}
+
+#eventsWrapper h2 {
+  margin-top: 3rem;
+  /* height of navbar (10vh) + 2vh */
+}
+/* 
+.event {
+  width: 320px;
+  margin: 20px 30px;
+  cursor: pointer;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-shadow: 0 0 5px #ccc;
+  background-color: #cce6e6;
+  overflow: hidden;
+}
+ */
 
 #events {
-    display: flex;
-    justify-content: space-evenly;
-    flex-wrap: wrap;
+  margin: auto;
+  display: grid;
+  gap: 20px;
 }
 
-.events {
-    padding: 10px 30px;
+@media (min-width: 1024px) {
+  #events {
+    grid-template-columns: repeat(3, 1fr);
+  }
 }
 
-#eventsWrapper h2 {
-    margin-top: 12vh;
-    /* height of navbar (10vh) + 2vh */
+@media (min-width: 768px) and (max-width: 1023px) {
+  #events {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
 
+@media (max-width: 767px) {
+  #eventsWrapper {
+    margin-top: 5rem;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  #events {
+    grid-template-columns: 1fr;
+  }
+}
 .event {
-    width: 320px;
-    margin: 20px 30px;
-    cursor: pointer;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    box-shadow: 0 0 5px #ccc;
-    background-color: #cce6e6;
-    overflow: hidden;
+  margin: 20px;
+  cursor: pointer;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-shadow: 0 0 5px #ccc;
+  background-color: #cce6e6;
+  overflow: hidden;
 }
 
 .eventDetail {
-    padding: 10px;
+  padding: 10px;
 }
 
 .event img {
-    width: 100%;
-    height: 200px;
-    object-fit: cover;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  object-position: center; /* centralize the overflow */
 }
 
 .event h3 {
-    text-align: center;
-    margin: 10px 0;
-    font-size: 20px;
-    color: #00293a;
+  text-align: center;
+  margin: 10px 0;
+  font-size: 1.5rem;
+  color: #00293a;
 }
 
 .event p {
-    text-align: center;
-    color: #00293a;
+  text-align: center;
+  color: #00293a;
 }
 
 .event .eventDetail {
-    padding: 0 15px 25px;
+  padding: 0 15px 25px;
 }
 
 .modal {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100vh;
-    overflow: hidden;
-    background-color: rgba(32, 32, 32, 0.9);
-    z-index: 10000;
-    display: flex;
-    justify-content: center;
-    /* align-items: center; */
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  background-color: rgba(32, 32, 32, 0.9);
+  z-index: 10000;
+  display: flex;
+  justify-content: center;
+  /* align-items: center; */
 }
 
 .modal img {
-    margin-top: 5vh;
-    display: flex;
-    max-width: 70%;
-    max-height: 70vh;
-    border-radius: 1.2rem;
-    animation: fadeIn 0.2s ease-in;
-    user-select: none;
+  cursor: zoom-in;
+  transition: transform 0.3s ease-out;
+
+  margin-top: 5vh;
+  display: flex;
+  max-width: 70%;
+  max-height: 70vh;
+  border-radius: 1.2rem;
+  animation: fadeIn 0.2s ease-in;
+  user-select: none;
+}
+
+.zoomedIn {
+  transform: scale(1.5);
+  cursor: zoom-out;
 }
 
 .modal-out {
-    animation: fadeOpacity 0.2s ease-in;
-    display: none;
+  animation: fadeOpacity 0.2s ease-in;
+  display: none;
 }
 
 .modal-out img {
-    animation: fadeOut 0.2s ease-in;
-    display: none;
+  animation: fadeOut 0.2s ease-in;
+  display: none;
 }
 
 .modal-nextimgs {
-    display: flex;
-    position: absolute;
-    bottom: 5%;
+  display: flex;
+  position: absolute;
+  bottom: 5%;
 }
 
 .modal-nextimgs img {
-    border-radius: 0;
-    max-height: 64px;
-    margin-right: 16px;
-    opacity: 0.7;
-    transition: 0.2s ease;
-    cursor: pointer;
-    overflow-x: scroll;
+  border-radius: 0;
+  max-height: 64px;
+  margin-right: 16px;
+  opacity: 0.7;
+  transition: 0.2s ease;
+  cursor: pointer;
+  overflow-x: scroll;
 }
 
 .modal-nextimgs img:hover {
-    opacity: 1;
+  opacity: 1;
 }
 
 .modal-icons {
-    position: fixed;
-    right: 1%;
-    top: 1%;
+  position: fixed;
+  right: 1%;
+  top: 1%;
 }
 
 .gallery-icons {
-    position: fixed;
-    top: 40%;
-    left: 50%;
-    width: 100%;
+  position: fixed;
+  top: 40%;
+  left: 50%;
+  width: 100%;
 }
 
 .gallery-icons div {
-    display: inline;
-    cursor: pointer;
-    /* background-color: grey; */
+  display: inline;
+  cursor: pointer;
+  /* background-color: grey; */
 }
 
 .gallery-icons div svg {
-    width: 64px;
-    height: 64px;
+  width: 64px;
+  height: 64px;
 }
 
 .gallery-icons .iconb {
-    position: relative;
-    left: -40%;
+  position: relative;
+  left: -40%;
 }
 
 .gallery-icons .iconf {
-    position: relative;
-    left: calc(40% - 128px);
+  position: relative;
+  left: calc(40% - 128px);
 }
 
 .modal-icons svg {
-    cursor: pointer;
+  cursor: pointer;
 }
 
 @keyframes fadeIn {
-    0% {
-        opacity: 0;
-        transform: translateY(20px);
-    }
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
 
-    100% {
-        opacity: 1;
-        transform: translateY(0);
-    }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 @keyframes fadeOut {
-
-    /*
+  /*
         Putting display: flex in both durations
         somehow works.
     */
-    0% {
-        display: flex;
-        opacity: 1;
-        transform: translateY(0px);
-    }
+  0% {
+    display: flex;
+    opacity: 1;
+    transform: translateY(0px);
+  }
 
-    100% {
-        display: flex;
-        opacity: 0;
-        transform: translateY(20px);
-    }
+  100% {
+    display: flex;
+    opacity: 0;
+    transform: translateY(20px);
+  }
 }
 
 @keyframes fadeOpacity {
-    from {
-        display: flex;
-        opacity: 1;
-    }
+  from {
+    display: flex;
+    opacity: 1;
+  }
 
-    to {
-        display: flex;
-        opacity: 0;
-    }
+  to {
+    display: flex;
+    opacity: 0;
+  }
 }
 
 @media screen and (max-width: 768px) {
-    .event {
-        width: 280px;
-        margin: 15px;
-    }
+  /* .event {
+    width: 280px;
+    margin: 15px;
+  } */
 
-    .modal {
-        align-items: center;
-    }
+  .modal {
+    align-items: center;
+  }
 
-    .modal img {
-        max-width: 90%;
-        max-height: 40vh;
-        margin-top: 0;
-    }
+  .modal img {
+    cursor: zoom-in;
+    transition: transform 0.3s ease-out;
+    max-width: 90%;
+    max-height: 60vh;
+    margin-top: 0;
+  }
 
-    .modal-nextimgs {
-        display: none;
-    }
+  .modal-nextimgs {
+    display: none;
+  }
 
-    .gallery-icons {
-        top: 80%;
-    }
+  .gallery-icons {
+    top: 80%;
+  }
 }
