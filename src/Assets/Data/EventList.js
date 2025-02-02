@@ -54,8 +54,8 @@ import sf8 from "../Images/SF Stall photos/sf1 (8).jpg";
 import sf9 from "../Images/SF Stall photos/sf1 (9).jpg";
 
 import ELAT from "../Images/ELAT Photos/ELAT.png";
-import elat1 from "../Images/ELAT photos/elat1 (1).jpg";
-import elat2 from "../Images/ELAT photos/elat1 (2).jpg";
+import elat1 from "../Images/ELAT Photos/elat1 (1).jpg";
+import elat2 from "../Images/ELAT Photos/elat1 (2).jpg";
 
 import Foresight from "../Images/Foresight Photos/Foresight.png";
 import fore1 from "../Images/Foresight Photos/fore1 (1).png";
