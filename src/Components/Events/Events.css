@@ -12,32 +12,13 @@
   color: #002838;
 }
 
-/* #events {
-  display: flex;
-  justify-content: space-evenly;
-  flex-wrap: wrap;
-}
- */
 .events {
   padding: 10px 30px;
 }
 
 #eventsWrapper h2 {
   margin-top: 3rem;
-  /* height of navbar (10vh) + 2vh */
 }
-/* 
-.event {
-  width: 320px;
-  margin: 20px 30px;
-  cursor: pointer;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  box-shadow: 0 0 5px #ccc;
-  background-color: #cce6e6;
-  overflow: hidden;
-}
- */
 
 #events {
   margin: auto;
@@ -72,7 +53,7 @@
   margin: 20px;
   cursor: pointer;
   border: 1px solid #ccc;
-  border-radius: 5px;
+  border-radius: 0.5rem;
   box-shadow: 0 0 5px #ccc;
   background-color: #cce6e6;
   overflow: hidden;
@@ -116,18 +97,16 @@
   z-index: 10000;
   display: flex;
   justify-content: center;
-  /* align-items: center; */
 }
 
 .modal img {
   cursor: zoom-in;
   transition: transform 0.3s ease-out;
-
   margin-top: 5vh;
   display: flex;
   max-width: 70%;
   max-height: 70vh;
-  border-radius: 1.2rem;
+  border-radius: 1rem;
   animation: fadeIn 0.2s ease-in;
   user-select: none;
 }
@@ -183,7 +162,6 @@
 .gallery-icons div {
   display: inline;
   cursor: pointer;
-  /* background-color: grey; */
 }
 
 .gallery-icons div svg {
@@ -218,10 +196,6 @@
 }
 
 @keyframes fadeOut {
-  /*
-        Putting display: flex in both durations
-        somehow works.
-    */
   0% {
     display: flex;
     opacity: 1;
