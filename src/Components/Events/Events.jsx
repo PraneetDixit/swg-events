@@ -4,33 +4,29 @@ import events from "../../Assets/Data/EventList";
 import { motion } from "framer-motion";
 
 export default function Events() {
-  // Motion variants
+  // Motion variants remain as before
   const hoverVariants = {
     hover: {
-      scale: 1.02,
-      y: -5,
+      scale: 1.05,
+      // y: -10,
       boxShadow: "0 2px 5px 0 #028d93",
       transition: { duration: 0.3 },
     },
   };
 
-  const imgHoverVariants = {
-    hover: {
-      padding: "15px",
-      borderRadius: "20px",
-    },
-  };
-
-  // Modal state
+  // Modal state and functions (unchanged)
   const [showModal, setShowModal] = useState({
     status: false,
     eventIndex: 0,
     imageIndex: 0,
     goOutAnimation: false,
   });
+  
+  // State for mobile card activation
+  const [activeMobileCard, setActiveMobileCard] = useState(null);
 
-  // Handle opening the modal with the selected event
   const handleEventClick = (index) => {
+    setActiveMobileCard(null);
     setShowModal({
       status: true,
       eventIndex: index,
@@ -39,30 +35,20 @@ export default function Events() {
     });
   };
 
-  // Close the modal with an animation
   const handleCloseModal = () => {
-    setShowModal({
-      ...showModal,
-      goOutAnimation: true,
-    });
+    setShowModal({ ...showModal, goOutAnimation: true });
   };
 
-  // Show the next image
   const handleNext = () => {
     const images = events[showModal.eventIndex].additionalimage;
-    setShowModal({
-      ...showModal,
-      imageIndex: (showModal.imageIndex + 1) % images.length,
-    });
+    setShowModal({ ...showModal, imageIndex: (showModal.imageIndex + 1) % images.length });
   };
 
-  // Show the previous image
   const handlePrev = () => {
     const images = events[showModal.eventIndex].additionalimage;
     setShowModal({
       ...showModal,
-      imageIndex:
-        showModal.imageIndex === 0 ? images.length - 1 : showModal.imageIndex - 1,
+      imageIndex: showModal.imageIndex === 0 ? images.length - 1 : showModal.imageIndex - 1,
     });
   };
 
@@ -82,6 +68,18 @@ export default function Events() {
     return () => window.removeEventListener("keydown", handleKeyDown);
   }, [showModal]);
 
+  // On mobile (e.g. width < 768px), first tap shows full overlay, second tap opens modal.
+  const handleCardClick = (index) => {
+    if (window.innerWidth < 768) {
+      if (activeMobileCard === index) {
+        handleEventClick(index);
+      } else {
+        setActiveMobileCard(index);
+      }
+    } else {
+      handleEventClick(index);
+    }
+  };
 
   return (
     <>
@@ -90,29 +88,27 @@ export default function Events() {
         <div id="events">
           {events.map((event, index) => (
             <motion.div
-              className="event"
-              key={index}
-              variants={hoverVariants}
-              whileHover="hover"
-              initial={{ opacity: 0, translateY: "30px" }}
-              whileInView={{
-                opacity: 1,
-                translateY: "0px",
-                transition: { duration: 0.8 },
-              }}
-              viewport={{ once: true }}
-              onClick={() => handleEventClick(index)}
-            >
-              <motion.img
-                src={event.image}
-                alt={event.title}
-                // variants={imgHoverVariants}
-              />
-              <div className="eventDetail">
-                <h3>{event.title}</h3>
-                <p>{event.description}</p>
-              </div>
-            </motion.div>
+  className={`event ${activeMobileCard === index ? "active" : ""}`}
+  key={index}
+  variants={hoverVariants}
+  whileHover="hover"
+  initial={{ opacity: 0, translateY: "30px" }}
+  whileInView={{
+    opacity: 1,
+    translateY: "0px",
+    transition: { duration: 0.8 },
+  }}
+  viewport={{ once: true }}
+  onClick={() => handleCardClick(index)}
+>
+  <img src={event.image} alt={event.title} />
+  <div className="overlay">
+    <div className="overlay-content">
+      <h3>{event.title}</h3>
+      <p>{event.description}</p>
+    </div>
+  </div>
+</motion.div>
           ))}
         </div>
       </div>
@@ -124,12 +120,16 @@ export default function Events() {
             const gallery = document.querySelector(".modal-nextimgs");
             const btns = document.querySelector(".gallery-icons");
             const images = document.querySelector(".modal-img");
-            if (!gallery.contains(e.target) && !btns.contains(e.target) && !images.contains(e.target)) {
+            if (
+              !gallery.contains(e.target) &&
+              !btns.contains(e.target) &&
+              !images.contains(e.target)
+            ) {
               handleCloseModal();
             }
           }}
         >
-          {/* Close button */}
+          {/* Modal Close Button */}
           <div className="modal-icons">
             <svg
               onClick={handleCloseModal}
@@ -153,9 +153,7 @@ export default function Events() {
           <img
             className={`modal-img ${zoomed ? "zoomedIn" : ""}`}
             src={
-              events[showModal.eventIndex].additionalimage[
-                showModal.imageIndex
-              ]
+              events[showModal.eventIndex].additionalimage[showModal.imageIndex]
             }
             onClick={() => setZoomed(!zoomed)}
             alt=""
@@ -197,7 +195,7 @@ export default function Events() {
             </div>
           </div>
 
-          {/* Thumbnails - Only for the selected event */}
+          {/* Thumbnails */}
           <div className="modal-nextimgs">
             {events[showModal.eventIndex].additionalimage.map((evImg, idx) => (
               <img

@@ -90,7 +90,7 @@ const events = [
   {
     title: "Career Orientation Session",
     description:
-      "Student Welfare Group conducts the Career Orientation Session for 2nd and 3rd year students to resolve all their doubts regarding the different career opportunities based on different profiles like SDE, Data, Finance, Quant, Core, etc. and how to prepare to pursue them",
+      "Student Welfare Group conducts the Career Orientation Session for 2nd and 3rd year students to resolve all their doubts regarding the different career opportunities and how to prepare to pursue them",
     shortDescription: "Guidance on various career paths and how to prepare for them.",
     image: COS,
     additionalimage: [COS, cos1, cos2, cos3, cos4, cos5, cos6, cos7, cos8],
@@ -98,7 +98,7 @@ const events = [
   {
     title: "Research Guidance Webinar",
     description:
-      "In this program we organize a panel discussion on the research domain as a career realm. It will disclose a roadmap to kickstart a journey in R&D as a career stream. Students who are oriented towards core field or they want to research upon some subjects which are in their department courses.",
+      "In this program we organize a panel discussion on the research domain as a career realm. It will disclose a roadmap to kickstart a journey in R&D as a career stream.",
     shortDescription: "Insights and roadmap for a research-oriented career.",
     image: RGW,
     additionalimage: [RGW, rgw1, rgw2, rgw3],
